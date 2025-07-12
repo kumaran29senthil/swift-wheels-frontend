@@ -1,4 +1,3 @@
-
 import React, { useState } from 'react';
 import { Car, Users, CreditCard, BarChart3, Plus, Edit, Trash2 } from 'lucide-react';
 import { getCars, getUsers, getBookings, setCars } from '../utils/storage';
@@ -14,7 +13,7 @@ const AdminDashboard = () => {
   const [users] = useState(getUsers());
   const [bookings] = useState(getBookings());
 
-  const totalRevenue = bookings.reduce((sum, booking) => sum + booking.totalAmount, 0);
+  const totalRevenue = bookings.reduce((sum, booking) => sum + booking.totalPrice, 0);
   const activeBookings = bookings.filter(booking => booking.status === 'confirmed').length;
   const availableCars = cars.filter(car => car.available).length;
 
@@ -194,7 +193,7 @@ const AdminDashboard = () => {
                         
                         <div>
                           <p className="text-sm text-gray-500">Total Amount</p>
-                          <p className="font-bold text-blue-600">${booking.totalAmount}</p>
+                          <p className="font-bold text-blue-600">${booking.totalPrice}</p>
                         </div>
                         
                         <div className="flex items-center justify-between">

@@ -14,6 +14,7 @@ export interface Car {
   available: boolean;
   rating: number;
   reviews: number;
+  description?: string;
 }
 
 export interface User {

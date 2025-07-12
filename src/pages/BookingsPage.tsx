@@ -1,4 +1,3 @@
-
 import React from 'react';
 import { Calendar, Car, Clock, CreditCard } from 'lucide-react';
 import { useAuth } from '../contexts/AuthContext';
@@ -118,7 +117,7 @@ const BookingsPage = () => {
                           <span className="text-sm font-medium">Total Amount</span>
                         </div>
                         <div className="text-lg font-bold text-blue-600">
-                          ${booking.totalAmount}
+                          ${booking.totalPrice}
                         </div>
                       </div>
                     </div>

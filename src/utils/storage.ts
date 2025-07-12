@@ -1,4 +1,3 @@
-
 import { Car, User, Booking } from '../types';
 import { hashPassword } from './auth';
 
@@ -27,7 +26,8 @@ export const initializeData = () => {
         features: ['Autopilot', 'Premium Audio', 'Glass Roof', 'Supercharging'],
         available: true,
         rating: 4.8,
-        reviews: 124
+        reviews: 124,
+        description: 'Experience the future of driving with Tesla Model 3, featuring cutting-edge technology and impressive performance.'
       },
       {
         id: '2',
@@ -43,7 +43,8 @@ export const initializeData = () => {
         features: ['All-Wheel Drive', 'Premium Interior', 'Navigation', 'Heated Seats'],
         available: true,
         rating: 4.7,
-        reviews: 89
+        reviews: 89,
+        description: 'Luxury SUV with spacious interior and advanced safety features, perfect for family trips.'
       },
       {
         id: '3',
@@ -59,7 +60,8 @@ export const initializeData = () => {
         features: ['Quattro AWD', 'Virtual Cockpit', 'Premium Plus', 'Bang & Olufsen'],
         available: true,
         rating: 4.6,
-        reviews: 67
+        reviews: 67,
+        description: 'Sophisticated sedan combining performance with luxury and cutting-edge technology.'
       },
       {
         id: '4',
@@ -75,7 +77,8 @@ export const initializeData = () => {
         features: ['Hybrid Engine', 'Toyota Safety 2.0', 'Wireless Charging', 'JBL Audio'],
         available: true,
         rating: 4.5,
-        reviews: 156
+        reviews: 156,
+        description: 'Eco-friendly hybrid sedan offering excellent fuel economy and reliability.'
       },
       {
         id: '5',
@@ -91,7 +94,8 @@ export const initializeData = () => {
         features: ['MBUX Infotainment', 'AMG Line', 'Panoramic Roof', 'Burmester Audio'],
         available: true,
         rating: 4.7,
-        reviews: 93
+        reviews: 93,
+        description: 'Premium luxury sedan with exceptional comfort and advanced driver assistance features.'
       },
       {
         id: '6',
@@ -107,7 +111,8 @@ export const initializeData = () => {
         features: ['Honda Sensing', 'Apple CarPlay', 'LED Headlights', 'Turbo Engine'],
         available: true,
         rating: 4.4,
-        reviews: 203
+        reviews: 203,
+        description: 'Reliable compact car with sporty design and excellent fuel efficiency.'
       },
       {
         id: '7',
@@ -123,7 +128,8 @@ export const initializeData = () => {
         features: ['4WD', 'Third Row Seating', 'SYNC 4', 'Co-Pilot360'],
         available: true,
         rating: 4.3,
-        reviews: 78
+        reviews: 78,
+        description: 'Spacious SUV with three-row seating, perfect for large families and adventures.'
       },
       {
         id: '8',
@@ -139,7 +145,8 @@ export const initializeData = () => {
         features: ['ProPILOT Assist', 'Zero Gravity Seats', 'Bose Audio', 'Remote Start'],
         available: false,
         rating: 4.2,
-        reviews: 134
+        reviews: 134,
+        description: 'Comfortable midsize sedan with advanced safety features and premium interior.'
       },
       {
         id: '9',
@@ -155,7 +162,8 @@ export const initializeData = () => {
         features: ['Sport Chrono', 'Air Suspension', 'Bose Surround', 'Porsche Connect'],
         available: true,
         rating: 4.9,
-        reviews: 45
+        reviews: 45,
+        description: 'High-performance luxury SUV delivering exceptional driving dynamics and style.'
       },
       {
         id: '10',
@@ -171,7 +179,8 @@ export const initializeData = () => {
         features: ['MyLink Infotainment', 'OnStar', 'Teen Driver', 'Wireless Charging'],
         available: true,
         rating: 4.1,
-        reviews: 167
+        reviews: 167,
+        description: 'Affordable midsize sedan with modern technology and comfortable ride quality.'
       }
     ];
     localStorage.setItem(STORAGE_KEYS.CARS, JSON.stringify(dummyCars));
@@ -222,6 +231,12 @@ export const getBookings = (): Booking[] => {
 
 export const setBookings = (bookings: Booking[]): void => {
   localStorage.setItem(STORAGE_KEYS.BOOKINGS, JSON.stringify(bookings));
+};
+
+export const addBooking = (booking: Booking): void => {
+  const bookings = getBookings();
+  bookings.push(booking);
+  setBookings(bookings);
 };
 
 export const getCurrentUser = (): User | null => {

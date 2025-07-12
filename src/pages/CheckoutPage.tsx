@@ -78,7 +78,8 @@ const CheckoutPage = () => {
         carId: car.id,
         startDate,
         endDate,
-        totalAmount: total,
+        totalDays: totalDays,
+        totalPrice: total,
         status: 'confirmed' as const,
         transactionId: `TXN${Date.now()}`,
         createdAt: new Date().toISOString()

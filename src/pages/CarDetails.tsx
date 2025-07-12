@@ -30,7 +30,7 @@ const CarDetails = () => {
   };
 
   const carSpecs = [
-    { icon: Users, label: 'Passengers', value: car.passengers },
+    { icon: Users, label: 'Passengers', value: car.seats },
     { icon: Fuel, label: 'Fuel Type', value: car.fuelType },
     { icon: Gauge, label: 'Transmission', value: car.transmission },
     { icon: Shield, label: 'Insurance', value: 'Included' }
@@ -75,7 +75,7 @@ const CarDetails = () => {
                 </h1>
                 <span className="text-lg text-gray-500">{car.year}</span>
               </div>
-              <p className="text-gray-600">{car.description}</p>
+              <p className="text-gray-600">{car.description || 'Premium vehicle with excellent features and performance.'}</p>
             </div>
 
             {/* Price and Availability */}
